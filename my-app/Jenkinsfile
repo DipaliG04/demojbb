@@ -1,15 +1,17 @@
 pipeline {
     agent any
     tools {
-        maven "MAVEN"  // Match Jenkins Maven tool name
-        jdk "JDK"      // Match Jenkins JDK tool name
+        maven 'Default'  // Use the configured Maven name
+        jdk 'Default'    // Use the configured JDK name
     }
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B clean package'  // Build the project
+                sh 'mvn clean package'
             }
         }
+    }
+}
         stage('Test') {
             steps {
                 sh 'mvn test'  // Run tests (if any)
