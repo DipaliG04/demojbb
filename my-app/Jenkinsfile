@@ -27,5 +27,3 @@ pipeline {
                 sh 'cp target/*.war /opt/tomcat/webapps/'
             }
         }
-    }
-}
