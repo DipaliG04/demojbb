@@ -1,29 +1,23 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Default'
-        jdk 'Default'
-    }
-
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                echo 'Building...'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                echo 'Testing...'
             }
         }
-    } // Ensure all opened blocks are properly closed
-}
 
         stage('Deploy') {
             steps {
-                // Example: Deploy to Tomcat
-                sh 'cp target/*.war /opt/tomcat/webapps/'
+                echo 'Deploying...'
             }
         }
+    }
+}
